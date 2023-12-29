@@ -4,21 +4,24 @@ import tkinter
 def main():
     app = tkinter.Tk()
     app.title("WhatsApp to Unsaved Contact")
-    app.geometry('340x440')
+    app.geometry('440x440')
     # app.resizable(width=False, height=False)
     app.configure(bg='#333333')
 
+    # Frame = container, with can place widgets inside the frame or directly to the root
+    frame = tkinter.Frame(bg='#333333')
+
     # Widgets
     login_label  = tkinter.Label(
-        app, text='Login', bg='#333333', fg='#FF3399', font=("Arial", 30) )
+        frame, text='Login', bg='#333333', fg='#FF3399', font=("Arial", 30) )
     username_label = tkinter.Label(
-        app, text='Username', bg='#333333', fg='#FFFFFF', font=("Arial", 16) )
-    username_entry = tkinter.Entry(app, font=("Arial", 16) )
+        frame, text='Username', bg='#333333', fg='#FFFFFF', font=("Arial", 16) )
+    username_entry = tkinter.Entry(frame, font=("Arial", 16) )
     password_label = tkinter.Label(
-        app, text='Password', bg='#333333', fg='#FFFFFF', font=("Arial", 16) )
-    password_entry = tkinter.Entry(app, show='*', font=("Arial", 16) )
+        frame, text='Password', bg='#333333', fg='#FFFFFF', font=("Arial", 16) )
+    password_entry = tkinter.Entry(frame, show='*', font=("Arial", 16) )
     login_button = tkinter.Button(
-        app, text='Login', bg='#FF3399', fg='#FFFFFF', font=("Arial", 16) )
+        frame, text='Login', bg='#FF3399', fg='#FFFFFF', font=("Arial", 16) )
 
     # Placing widgets on screen
     login_label.grid(row=0, column=0, columnspan=2, sticky='news', pady=40)
@@ -28,7 +31,7 @@ def main():
     password_entry.grid(row=2, column=1, pady=20)
     login_button.grid(row=3, column=0, columnspan=2, pady=30)
 
-
+    frame.pack()
 
 
 
