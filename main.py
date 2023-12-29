@@ -9,12 +9,12 @@ def main():
     app.configure(bg='#333333')
 
     # Widgets
-    login_label  = tkinter.Label(app, text='Login')
-    username_label = tkinter.Label(app, text='Username')
+    login_label  = tkinter.Label(app, text='Login', bg='#333333', fg='#FFFFFF')
+    username_label = tkinter.Label(app, text='Username', bg='#333333', fg='#FFFFFF')
     username_entry = tkinter.Entry(app)
-    password_label = tkinter.Label(app, text='Password')
+    password_label = tkinter.Label(app, text='Password', bg='#333333', fg='#FFFFFF')
     password_entry = tkinter.Entry(app, show='*')
-    login_button = tkinter.Button(app, text='Login')
+    login_button = tkinter.Button(app, text='Login', bg='#FF3399', fg='#FFFFFF')
 
     # Placing widgets on screen
     login_label.grid(row=0, column=0, columnspan=2)
