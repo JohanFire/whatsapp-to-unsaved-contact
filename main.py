@@ -7,6 +7,9 @@ def main():
     app.geometry('340x440')
     app.configure(bg='#333333')
 
+    # Geometry managers: pack, place, grid
+    label = tkinter.Label(app, text='Hello').pack()
+
     app.mainloop()
 
 if __name__ == '__main__':
