@@ -5,10 +5,28 @@ def main():
     app = tkinter.Tk()
     app.title("WhatsApp to Unsaved Contact")
     app.geometry('340x440')
+    app.resizable(width=False, height=False)
     app.configure(bg='#333333')
 
-    # Geometry managers: pack, place, grid
-    label = tkinter.Label(app, text='Hello').pack()
+    # Widgets
+    login_label  = tkinter.Label(app, text='Login')
+    username_label = tkinter.Label(app, text='Username')
+    username_entry = tkinter.Entry(app)
+    password_label = tkinter.Label(app, text='Password')
+    password_entry = tkinter.Entry(app, show='*')
+    login_button = tkinter.Button(app, text='Login')
+
+    # Placing widgets on screen
+    login_label.grid(row=0, column=0, columnspan=2)
+    username_label.grid(row=1, column=0)
+    username_entry.grid(row=1, column=1)
+    password_label.grid(row=2, column=0)
+    password_entry.grid(row=2, column=1)
+    login_button.grid(row=3, column=0, columnspan=2)
+
+
+
+
 
     app.mainloop()
 
