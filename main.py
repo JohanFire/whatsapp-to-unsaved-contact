@@ -1,14 +1,39 @@
 import tkinter
 # from tkinter import messagebox
+from icecream import ic
+
+def render_center_of_screen(app, width, height):
+    # Centrar la ventana en la pantalla
+    ancho_ventana = width
+    alto_ventana = height
+
+    # Obtener el ancho y alto de la pantalla
+    ancho_pantalla = app.winfo_screenwidth()
+    alto_pantalla = app.winfo_screenheight()
+
+    # Calcular las coordenadas x e y para centrar la ventana
+    x = (ancho_pantalla - ancho_ventana) // 2
+    y = (alto_pantalla - alto_ventana) // 2
+
+    # # Establecer la geometría de la ventana con las coordenadas calculadas
+    # app.geometry(f"{ancho_ventana}x{alto_ventana}+{x}+{y}")
+
+    return ancho_ventana, alto_ventana, x, y
+
 
 def main():
     app = tkinter.Tk()
     app.title("WhatsApp to Unsaved Contact")
-    app.geometry('440x440')
-    # app.resizable(width=False, height=False)
+
+    width, height, x, y = render_center_of_screen(app, width=440, height=440)
+    app.geometry(f"{width}x{height}+{x}+{y}")
+    app.resizable(width=False, height=False)
     app.configure(bg='#333333')
 
-    # Frame = container, with can place widgets inside the frame or directly to the root
+
+
+
+    # Frame = container, with can place widgets inside the frame or directly to the app
     frame = tkinter.Frame(bg='#333333')
 
     # Widgets
