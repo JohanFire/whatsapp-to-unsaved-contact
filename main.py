@@ -1,11 +1,15 @@
 import tkinter
 # from tkinter import messagebox
-from typing import Tuple
+# from typing import Tuple
 
 from icecream import ic
 
-def render_center_of_screen(app, width: int, height: int) -> Tuple[int, int, int, int]:
-    """ Calculate X and Y coordinates to center window """
+def render_center_of_screen(app, width: int, height: int) -> tuple[int, int, int, int]:
+    """ Calculate X and Y coordinates to center window 
+    ---
+    ``x = (screen_width - width) // 2`` \n
+    ``y = (screen_height - height) // 2`` \n
+    """
     screen_width = app.winfo_screenwidth()
     screen_height = app.winfo_screenheight()
 
