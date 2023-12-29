@@ -5,19 +5,23 @@ def main():
     app = tkinter.Tk()
     app.title("WhatsApp to Unsaved Contact")
     app.geometry('340x440')
-    app.resizable(width=False, height=False)
+    # app.resizable(width=False, height=False)
     app.configure(bg='#333333')
 
     # Widgets
-    login_label  = tkinter.Label(app, text='Login', bg='#333333', fg='#FFFFFF')
-    username_label = tkinter.Label(app, text='Username', bg='#333333', fg='#FFFFFF')
-    username_entry = tkinter.Entry(app)
-    password_label = tkinter.Label(app, text='Password', bg='#333333', fg='#FFFFFF')
-    password_entry = tkinter.Entry(app, show='*')
-    login_button = tkinter.Button(app, text='Login', bg='#FF3399', fg='#FFFFFF')
+    login_label  = tkinter.Label(
+        app, text='Login', bg='#333333', fg='#FFFFFF', font=("Arial", 30) )
+    username_label = tkinter.Label(
+        app, text='Username', bg='#333333', fg='#FFFFFF', font=("Arial", 16) )
+    username_entry = tkinter.Entry(app, font=("Arial", 16) )
+    password_label = tkinter.Label(
+        app, text='Password', bg='#333333', fg='#FFFFFF', font=("Arial", 16) )
+    password_entry = tkinter.Entry(app, show='*', font=("Arial", 16) )
+    login_button = tkinter.Button(
+        app, text='Login', bg='#FF3399', fg='#FFFFFF', font=("Arial", 16) )
 
     # Placing widgets on screen
-    login_label.grid(row=0, column=0, columnspan=2)
+    login_label.grid(row=0, column=0, columnspan=2, sticky='news')
     username_label.grid(row=1, column=0)
     username_entry.grid(row=1, column=1)
     password_label.grid(row=2, column=0)
