@@ -1,42 +1,33 @@
 import tkinter
 # from tkinter import messagebox
+from typing import Tuple
+
 from icecream import ic
 
-def render_center_of_screen(app, width, height):
-    # Centrar la ventana en la pantalla
-    ancho_ventana = width
-    alto_ventana = height
+def render_center_of_screen(app, width: int, height: int) -> Tuple[int, int, int, int]:
+    """ Calculate X and Y coordinates to center window """
+    screen_width = app.winfo_screenwidth()
+    screen_height = app.winfo_screenheight()
 
-    # Obtener el ancho y alto de la pantalla
-    ancho_pantalla = app.winfo_screenwidth()
-    alto_pantalla = app.winfo_screenheight()
+    # Calculate X and Y coordinates to center window
+    x = (screen_width - width) // 2
+    y = (screen_height - height) // 2
 
-    # Calcular las coordenadas x e y para centrar la ventana
-    x = (ancho_pantalla - ancho_ventana) // 2
-    y = (alto_pantalla - alto_ventana) // 2
-
-    # # Establecer la geometría de la ventana con las coordenadas calculadas
-    # app.geometry(f"{ancho_ventana}x{alto_ventana}+{x}+{y}")
-
-    return ancho_ventana, alto_ventana, x, y
+    return width, height, x, y
 
 
 def main():
     app = tkinter.Tk()
-    app.title("WhatsApp to Unsaved Contact")
 
-    width, height, x, y = render_center_of_screen(app, width=440, height=440)
+    app.title("WhatsApp to Unsaved Contact")
+    width, height, x, y = render_center_of_screen(app, width=800, height=640)
     app.geometry(f"{width}x{height}+{x}+{y}")
     app.resizable(width=False, height=False)
     app.configure(bg='#333333')
 
-
-
-
-    # Frame = container, with can place widgets inside the frame or directly to the app
     frame = tkinter.Frame(bg='#333333')
 
-    # Widgets
+    """ Widgets """
     login_label  = tkinter.Label(
         frame, text='Login', bg='#333333', fg='#FF3399', font=("Arial", 30) )
     username_label = tkinter.Label(
@@ -48,7 +39,7 @@ def main():
     login_button = tkinter.Button(
         frame, text='Login', bg='#FF3399', fg='#FFFFFF', font=("Arial", 16) )
 
-    # Placing widgets on screen
+    """ Placing widgets on screen """
     login_label.grid(row=0, column=0, columnspan=2, sticky='news', pady=40)
     username_label.grid(row=1, column=0)
     username_entry.grid(row=1, column=1, pady=20)
