@@ -24,13 +24,11 @@ class App:
 
     def send_message_action(self):
         if self.phone_number_entry:
-            texto_ingresado = self.phone_number_entry.get()
-            print(f"Texto ingresado: {texto_ingresado}")
-        else:
-            print("Error: self.entry no se ha creado correctamente.")
+            phone_number = self.phone_number_entry.get()
+            print(f"phone_number: {phone_number}")
 
-        # if self.phone_number_entry.get():
-        #     print(self.phone_number_entry.get())
+            self.phone_number_entry.delete(0, 'end')
+
 
         # # Especifica el enlace que deseas abrir
         # enlace = "https://www.google.com"
