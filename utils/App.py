@@ -51,20 +51,16 @@ class App:
         if ' ' in digit:
             if len(digit) >= 13:
                 # self.phone_number_entry.configure(state='disabled')
-
                 return False
         else:
             if len(digit) >= 11:
                 return False
-
-
         
         validated_digit = digit
-
-        patron = re.compile(r'^[0-9\s]+$')
+        pattern = re.compile(r'^[0-9\s]+$')
             
-        # Verificar si el texto coincide con el patrón
-        if patron.match(validated_digit):
+        # Verify if phone number matchs with the pattern
+        if pattern.match(validated_digit):
             return True
         else:
             return False
@@ -72,23 +68,6 @@ class App:
     def validate_phone_entry(self, new_text):
         """ Validate the length of the phone number entry """
         return len(new_text) <= 12
-
-        # if len(new_text) <= 12:
-        #     print(' len(new_text) <= 12')
-
-        # current_text = self.phone_number_entry.get()
-    
-        # # Permitir solo dígitos y espacios si ya hay al menos un dígito
-        # return digit.isdigit() or (digit == " " and any(char.isdigit() for char in current_text))
-
-    # def validate_phone_format(self, event):
-    #     phone_number = self.phone_number_entry.get()
-
-    #     if len(phone_number) == 2:
-    #         print(phone_number)
-
-
-
 
     def format_phone_number(self, event):
         # Formatear automáticamente el número al estilo "XX XXXX XXXX"
