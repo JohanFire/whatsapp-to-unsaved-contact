@@ -14,7 +14,7 @@ class App:
             self.frame, text='WhatsApp to Unsaved Contact', bg='#333333', fg='#FF3399', font=("Arial", 30)
             ).grid(row=0, column=1, sticky='news', pady=40)
         
-        self.phone_number_entry = tkinter.Entry(self.frame, font=("Arial", 20), validate='key')
+        self.phone_number_entry = tkinter.Entry(self.frame, font=("Arial", 20), validate='key', validatecommand=(self.validate_phone_entry, '%P'))
         self.phone_number_entry['validatecommand'] = (self.phone_number_entry.register(self.validate_phone_digit), '%P')        
         
         # Formatear automáticamente el número al estilo "XX XXXX XXXX"
@@ -42,18 +42,39 @@ class App:
                 webbrowser.open(f"https://wa.me/{phone_number}")
 
     def validate_phone_digit(self, digit):
-        """ Validate textbox to allow only numbers """
+        """ Validate textbox to allow 
+        - only numbers or space
+        - no more than 10 digits or 12 if contains format's space
+        """
         # return digit.isdigit() or digit == ""
+
+        if ' ' in digit:
+            if len(digit) >= 13:
+                # self.phone_number_entry.configure(state='disabled')
+
+                return False
+        else:
+            if len(digit) >= 11:
+                return False
+
+
+        
+        validated_digit = digit
 
         patron = re.compile(r'^[0-9\s]+$')
             
         # Verificar si el texto coincide con el patrón
-        if patron.match(digit):
+        if patron.match(validated_digit):
             return True
         else:
             return False
     
+    def validate_phone_entry(self, new_text):
+        """ Validate the length of the phone number entry """
+        return len(new_text) <= 12
 
+        # if len(new_text) <= 12:
+        #     print(' len(new_text) <= 12')
 
         # current_text = self.phone_number_entry.get()
     
