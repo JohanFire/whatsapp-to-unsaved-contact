@@ -1,6 +1,9 @@
 import tkinter
+from tkinter import ttk
 import webbrowser
 import re
+
+from utils.screen import render_center_of_screen
 
 class App:
     def __init__(self, master):
@@ -22,6 +25,12 @@ class App:
             self.frame, text='Send message', bg='#FF3399', fg='#FFFFFF', font=("Arial", 18),
             command=self.send_message_action
             ).grid(row=3, column=1, columnspan=2, pady=30)
+
+        self.info_button = tkinter.Button(
+            self.frame, text='info', border=0, bg='#333333', fg='#636e72', font=("Arial", 14),
+            cursor='hand2', activebackground='#333333', activeforeground='#FFFFFF',
+            command=self.info_action
+            ).grid(row=4, column=1)
 
         self.frame.pack()
 
@@ -71,3 +80,11 @@ class App:
             return True
         else:
             return False
+        
+    def info_action(self):
+        info_window = tkinter.Toplevel(self.master)
+        info_window.title("App Info")
+        width, height, x, y = render_center_of_screen(info_window, width=400, height=200)
+        info_window.geometry(f"{width}x{height}+{x}+{y}")
+        info_window.resizable(width=False, height=False)
+        info_window.configure(bg='#333333')

@@ -11,7 +11,7 @@ def main():
     root = tkinter.Tk()
 
     root.title("WhatsApp to Unsaved Contact")
-    width, height, x, y = render_center_of_screen(root, width=800, height=340)
+    width, height, x, y = render_center_of_screen(root, width=800, height=360)
     root.geometry(f"{width}x{height}+{x}+{y}")
     root.resizable(width=False, height=False)
     root.configure(bg='#333333')
