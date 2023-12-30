@@ -23,12 +23,13 @@ class App:
         self.frame.pack()
 
     def send_message_action(self):
-        if self.phone_number_entry:
+        if self.phone_number_entry and len(self.phone_number_entry.get()) == 10:
             phone_number = self.phone_number_entry.get()
             print(f"phone_number: {phone_number}")
 
             self.phone_number_entry.delete(0, 'end')
 
+            webbrowser.open(f"https://wa.me/{phone_number}")
 
         # # Especifica el enlace que deseas abrir
         # enlace = "https://www.google.com"
