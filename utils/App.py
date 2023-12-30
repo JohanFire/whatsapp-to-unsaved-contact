@@ -81,11 +81,15 @@ class App:
         digits = [char for char in raw_text if char.isdigit()]
         formatted_text = ''
 
+        if digits[-1] and digits[-2] == " ":
+            digits_without_double_space = digits[-1]
+            digits = digits_without_double_space
+
         if len(digits) == 2:
             if digits[-1] == ' ':
                 print(digits[-1])
                 return
-                
+
             print('len(digits) == 2')
             # formatted_text += ''.join(digits[0:2]) + ' '
             
@@ -93,7 +97,11 @@ class App:
             self.phone_number_entry.delete(0, 'end')
             self.phone_number_entry.insert(2, ' ')
 
-        if len(digits) == 6:
+        elif len(digits) == 6:
+            if digits[-1] == ' ':
+                print(digits[-1])
+                return
+
             print('len(digits) == 6')
             # formatted_text += ''.join(digits[2:6]) + ' '
 
