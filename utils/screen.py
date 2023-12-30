@@ -1,6 +1,6 @@
 
 
-def render_center_of_screen(app, width: int, height: int) -> tuple[int, int, int, int]:
+def render_center_of_screen(app: classmethod, width: int, height: int) -> tuple[int, int, int, int]:
     """ Calculate X and Y coordinates to center window 
     ---
     ``x = (screen_width - width) // 2`` \n

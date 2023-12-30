@@ -7,7 +7,6 @@ from utils.screen import render_center_of_screen
 
 def main():
     app = tkinter.Tk()
-
     app.title("WhatsApp to Unsaved Contact")
     width, height, x, y = render_center_of_screen(app, width=800, height=640)
     app.geometry(f"{width}x{height}+{x}+{y}")
