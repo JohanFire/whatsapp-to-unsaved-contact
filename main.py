@@ -22,35 +22,6 @@ def main():
         frame, text='WhatsApp to Unsaved Contact', bg='#333333', fg='#FF3399', font=("Arial", 30)
         ).grid(row=0, column=1, sticky='news', pady=40)
 
-    """ 
-    # username_label = tkinter.Label(
-    #     frame, text='Phone Number:', bg='#333333', fg='#FFFFFF', font=("Arial", 20)
-    #     ).grid(row=1, column=0, padx=20)
-    
-    opciones = [52, '01', 48]
-    options = tkinter.StringVar(frame)
-    options.set(opciones[0])
-    # lada_optionMenu = tkinter.OptionMenu(frame, options, *opciones, 
-    #     ).grid(row=1, column=0, padx=0)
-
-    # Crear un estilo para personalizar el menú desplegable
-    estilo = ttk.Style()
-    estilo.theme_create("mi_tema", parent="alt", settings={
-        "TCombobox": {
-            "configure": {"fieldbackground": '#333333', "background": '#C0C0C0', "foreground": "#FFFFFF",
-                "font": ('Helvetica', 22)
-            },
-        }
-    })
-    # estilo.configure('TCombobox', font=('Helvetica', 22))
-    estilo.theme_use("mi_tema")
-
-
-    lada_cmbbox = ttk.Combobox(frame, values=opciones, textvariable=options, style='TCombobox')
-    lada_cmbbox.grid(row=1, column=0, padx=0)
-    """
-
-
     username_entry = tkinter.Entry(frame, font=("Arial", 20)
         ).grid(row=1, column=1, pady=20)
     login_button = tkinter.Button(
