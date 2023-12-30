@@ -4,7 +4,7 @@ import webbrowser
 class App:
     def __init__(self, master):
         self.master = master
-        master.title("WhatsApp to Unsaved Contact")
+        # master.title("WhatsApp to Unsaved Contact")
 
         self.frame = tkinter.Frame(bg='#333333')
 
@@ -22,8 +22,17 @@ class App:
         self.frame.pack()
 
     def send_message_action(self):
-        # Especifica el enlace que deseas abrir
-        enlace = "https://www.google.com"
+        if self.phone_number_entry:
+            texto_ingresado = self.entry.get()
+            print(f"Texto ingresado: {texto_ingresado}")
+        else:
+            print("Error: self.entry no se ha creado correctamente.")
 
-        # Abre el enlace en el navegador web predeterminado
-        webbrowser.open(enlace)
+        # if self.phone_number_entry.get():
+        #     print(self.phone_number_entry.get())
+
+        # # Especifica el enlace que deseas abrir
+        # enlace = "https://www.google.com"
+
+        # # Abre el enlace en el navegador web predeterminado
+        # webbrowser.open(enlace)
