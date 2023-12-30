@@ -12,8 +12,9 @@ class App:
         self.title_label  = tkinter.Label(
             self.frame, text='WhatsApp to Unsaved Contact', bg='#333333', fg='#FF3399', font=("Arial", 30)
             ).grid(row=0, column=1, sticky='news', pady=40)
-        self.phone_number_entry = tkinter.Entry(self.frame, font=("Arial", 20)
-            ).grid(row=1, column=1, pady=20)
+        self.phone_number_entry = tkinter.Entry(self.frame, font=("Arial", 20))
+        self.phone_number_entry.grid(row=1, column=1, pady=20)
+
         self.send_message_button = tkinter.Button(
             self.frame, text='Send message', bg='#FF3399', fg='#FFFFFF', font=("Arial", 18),
             command=self.send_message_action
@@ -23,7 +24,7 @@ class App:
 
     def send_message_action(self):
         if self.phone_number_entry:
-            texto_ingresado = self.entry.get()
+            texto_ingresado = self.phone_number_entry.get()
             print(f"Texto ingresado: {texto_ingresado}")
         else:
             print("Error: self.entry no se ha creado correctamente.")
