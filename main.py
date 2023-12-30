@@ -17,20 +17,17 @@ def main():
 
     frame = tkinter.Frame(bg='#333333')
 
-    """ Widgets """
+    """ Frame Widgets """
     title_label  = tkinter.Label(
         frame, text='WhatsApp to Unsaved Contact', bg='#333333', fg='#FF3399', font=("Arial", 30)
         ).grid(row=0, column=1, sticky='news', pady=40)
-
-    username_entry = tkinter.Entry(frame, font=("Arial", 20)
+    phone_number_entry = tkinter.Entry(frame, font=("Arial", 20)
         ).grid(row=1, column=1, pady=20)
-    login_button = tkinter.Button(
+    send_message_button = tkinter.Button(
         frame, text='Send message', bg='#FF3399', fg='#FFFFFF', font=("Arial", 18)
         ).grid(row=3, column=1, columnspan=2, pady=30)
 
     frame.pack()
-
-    
 
     app.mainloop()
 
