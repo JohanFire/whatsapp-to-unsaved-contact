@@ -14,12 +14,8 @@ class App:
             ).grid(row=0, column=1, sticky='news', pady=40)
         
         self.phone_number_entry = tkinter.Entry(self.frame, font=("Arial", 20), validate='key')
-        # Validar solo números
-        self.phone_number_entry['validatecommand'] = (self.phone_number_entry.register(self.validate_phone), '%P')
-        
+        self.phone_number_entry['validatecommand'] = (self.phone_number_entry.register(self.validate_phone), '%P')        
         self.phone_number_entry.grid(row=1, column=1, pady=20)
-
-
 
         self.send_message_button = tkinter.Button(
             self.frame, text='Send message', bg='#FF3399', fg='#FFFFFF', font=("Arial", 18),
@@ -40,9 +36,3 @@ class App:
             self.phone_number_entry.delete(0, 'end')
 
             webbrowser.open(f"https://wa.me/{phone_number}")
-
-        # # Especifica el enlace que deseas abrir
-        # enlace = "https://www.google.com"
-
-        # # Abre el enlace en el navegador web predeterminado
-        # webbrowser.open(enlace)
