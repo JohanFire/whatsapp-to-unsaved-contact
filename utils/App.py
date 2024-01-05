@@ -35,7 +35,7 @@ class App:
         self.frame.pack()
 
     def send_message_action(self):
-        if self.phone_number_entry:
+        if len(self.phone_number_entry.get()) >= 10:
             print(self.phone_number_entry.get())
             phone_number = self.phone_number_entry.get().replace(' ', '')
             print(phone_number)
@@ -88,3 +88,57 @@ class App:
         info_window.geometry(f"{width}x{height}+{x}+{y}")
         info_window.resizable(width=False, height=False)
         info_window.configure(bg='#333333')
+
+        label = tkinter.Label(info_window, 
+            text='See open source project on github.com/johanfire', 
+            bg='#333333', fg='#ff5cad', font=("Arial", 12), pady=70,
+            ).pack()
+        label = tkinter.Label(info_window, 
+            text='www.johanfire.com', 
+            bg='#333333', fg='#ff5cad', font=("Arial", 12),
+            ).pack()
+
+
+
+
+        # frame = tkinter.Frame(bg='#333333')
+
+        # """ Frame Widgets """
+        # title_label  = tkinter.Label(
+        #     frame, text='WhatsApp to Unsaved Contact', bg='#333333', fg='#FF3399', font=("Arial", 30)
+        #     )
+        # title_label.grid(row=0, column=1, sticky='news', pady=40)
+        # phone_number_entry = tkinter.Entry(frame, font=("Arial", 20)
+        #     ).grid(row=1, column=1, pady=20)
+        # send_message_button = tkinter.Button(
+        #     frame, text='Send message', bg='#FF3399', fg='#FFFFFF', font=("Arial", 18)
+        #     ).grid(row=3, column=1, columnspan=2, pady=30)
+
+        # frame.pack()
+
+        # info_window.mainloop()
+
+
+        # app = tkinter.Tk()
+
+        # app.title("WhatsApp to Unsaved Contact")
+        # width, height, x, y = render_center_of_screen(app, width=800, height=340)
+        # app.geometry(f"{width}x{height}+{x}+{y}")
+        # app.resizable(width=False, height=False)
+        # app.configure(bg='#333333')
+
+        # frame = tkinter.Frame(bg='#333333')
+
+        # """ Frame Widgets """
+        # title_label  = tkinter.Label(
+        #     frame, text='WhatsApp to Unsaved Contact', bg='#333333', fg='#FF3399', font=("Arial", 30)
+        #     ).grid(row=0, column=1, sticky='news', pady=40)
+        # phone_number_entry = tkinter.Entry(frame, font=("Arial", 20)
+        #     ).grid(row=1, column=1, pady=20)
+        # send_message_button = tkinter.Button(
+        #     frame, text='Send message', bg='#FF3399', fg='#FFFFFF', font=("Arial", 18)
+        #     ).grid(row=3, column=1, columnspan=2, pady=30)
+
+        # frame.pack()
+
+        # app.mainloop()
