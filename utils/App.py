@@ -34,6 +34,7 @@ class App:
 
         self.frame.pack()
 
+        self.phone_number_entry.bind("<Return>", self.on_enter_key)
         self.phone_number_entry.focus_set()
 
     def send_message_action(self):
@@ -46,6 +47,9 @@ class App:
                 self.phone_number_entry.delete(0, 'end')
 
                 webbrowser.open(f"https://wa.me/{phone_number}")
+
+    def on_enter_key(self, event) -> None:
+        self.send_message_action()
 
     def validate_phone_digit(self, digit):
         """ Validate textbox to allow 
