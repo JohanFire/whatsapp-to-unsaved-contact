@@ -104,6 +104,6 @@ class App:
             bg='#333333', fg='#ff5cad', font=("Arial", 12), pady=60,
             ).pack()
         version = tkinter.Label(info_window, 
-            text='v1.1', 
+            text='v2.0', 
             bg='#333333', fg='#ff5cad', font=("Arial", 12),
             ).pack()
