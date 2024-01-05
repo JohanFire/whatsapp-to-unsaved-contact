@@ -34,6 +34,8 @@ class App:
 
         self.frame.pack()
 
+        self.phone_number_entry.focus_set()
+
     def send_message_action(self):
         if len(self.phone_number_entry.get()) >= 10:
             print(self.phone_number_entry.get())
@@ -89,11 +91,15 @@ class App:
         info_window.resizable(width=False, height=False)
         info_window.configure(bg='#333333')
 
-        label = tkinter.Label(info_window, 
-            text='See open source project on github.com/johanfire', 
-            bg='#333333', fg='#ff5cad', font=("Arial", 12), pady=70,
-            ).pack()
-        label = tkinter.Label(info_window, 
+        johanfire = tkinter.Label(info_window, 
             text='www.johanfire.com', 
+            bg='#333333', fg='#ff5cad', font=("Arial", 12),
+            ).pack()
+        github = tkinter.Label(info_window, 
+            text='See open source project on github.com/johanfire', 
+            bg='#333333', fg='#ff5cad', font=("Arial", 12), pady=60,
+            ).pack()
+        version = tkinter.Label(info_window, 
+            text='v1.1', 
             bg='#333333', fg='#ff5cad', font=("Arial", 12),
             ).pack()
